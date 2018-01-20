@@ -94,14 +94,14 @@ export default class Board {
           this.flippedCards.forEach(card => card.solve());
           this.flippedCards = [];
           this.cardTimeout = null;
-        }, 1500);
+        }, 1000);
         this.matches++;
       } else {
         this.cardTimeout = setTimeout(() => {
           this.flippedCards.forEach(card => card.unflip());
           this.flippedCards = [];
           this.cardTimeout = null;
-        }, 1500);
+        }, 1000);
       }
 
       this.increaseTries();
@@ -133,6 +133,7 @@ export default class Board {
       }
 
       removeClass(this.$gameCompleted, 'hidden');
+      ensureClass(this.$gameCompleted, 'fade-in');
       this.$yourScore.innerHTML = this.currentTries + "";
   }
 

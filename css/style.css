@@ -68,6 +68,15 @@
   }
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .game-card.solved {
   animation: fade-out 1s;
   animation-fill-mode: forwards;
@@ -90,6 +99,12 @@ input.error {
   margin-left: -200px;
   text-align: center;
   padding: 8px;
+}
+
+.game-completed.fade-in {
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .hidden {
