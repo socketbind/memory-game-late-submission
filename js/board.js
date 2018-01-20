@@ -15,6 +15,9 @@ export default class Board {
     this.$score = rootElement.querySelector('.score');
     this.$cardsContainer = rootElement.querySelector('.cards');
 
+    this.$gameCompleted = rootElement.querySelector('.game-completed');
+    this.$yourScore = this.$gameCompleted.querySelector('span');
+
     this.$score = rootElement.querySelector(".score span");
     this.$tries = rootElement.querySelector(".tries span");
   }
@@ -31,7 +34,7 @@ export default class Board {
 
     let deckSize = parseInt(deckSizeVal);
 
-    if (deckSize < 6 || deckSize > 20) {
+    if (deckSize < 0 || deckSize > 20) {
       ensureClass(this.$deckSize, 'error');
       return;
     }
@@ -69,6 +72,8 @@ export default class Board {
     for (var card of this.currentCards) {
       $cardsContainer.appendChild(card.$root);
     }
+
+    ensureClass(this.$gameCompleted, 'hidden');
   }
 
   handleFlip(card) {
@@ -113,6 +118,9 @@ export default class Board {
         this.lowestNumberOfTries = this.currentTries;
         this.updateScore(this.lowestNumberOfTries);
       }
+
+      removeClass(this.$gameCompleted, 'hidden');
+      this.$yourScore.innerHTML = this.currentTries + "";
   }
 
 }

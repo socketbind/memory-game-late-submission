@@ -12,22 +12,33 @@
 
 <body>
 
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white main-nav">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Memory Game</h5>
+  </div>
+
   <div class="container">
-    <main id="board">
+    <main id="board" class="game-board">
       <section class="controls row">
         <div class="col-lg-6">
           <label for="deck-size">Deck size:</label>
           <input type="text" id="deck-size" class="deck-size" size="8">
-          <input type="button" value="Start game" class="btn btn-restart">
+          <input type="button" value="Start new game" class="btn btn-outline-primary btn-restart">
         </div>
         <div class="col-lg-6 scores">
-          <div class="score">Best score: <span>0</span></div>
-          <div class="tries">Tries: <span>0</span></div>
+          <div class="score"><em>Best score:</em> <span>0</span></div>
+          <div class="tries"><em>Tries:</em> <span>0</span></div>
         </div>
       </section>
 
       <section class="cards">
       </section>
+
+      <div class="game-completed hidden">
+        <h1 class="text-success">Game completed!</h1>
+
+        <h2>Your score:</h2>
+        <span>0</span>
+      </div>
     </main>
   </div>
 
