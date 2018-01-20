@@ -94,14 +94,14 @@ export default class Board {
           this.flippedCards.forEach(card => card.solve());
           this.flippedCards = [];
           this.cardTimeout = null;
-        });
+        }, 1500);
         this.matches++;
       } else {
         this.cardTimeout = setTimeout(() => {
           this.flippedCards.forEach(card => card.unflip());
           this.flippedCards = [];
           this.cardTimeout = null;
-        }, 2000);
+        }, 1500);
       }
 
       this.increaseTries();
