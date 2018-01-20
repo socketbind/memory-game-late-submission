@@ -74,9 +74,15 @@ export default class Board {
     }
 
     ensureClass(this.$gameCompleted, 'hidden');
+
+    this.cardTimeout && clearTimeout(this.cardTimeout);
   }
 
   handleFlip(card) {
+    if (this.cardTimeout) {
+      return;
+    }
+
     if (!this.flippedCards.includes(card)) {
       card.flip();
       this.flippedCards.push(card);
@@ -84,12 +90,19 @@ export default class Board {
 
     if (this.flippedCards.length == 2) {
       if (this.flippedCards[0].sameAs(this.flippedCards[1])) {
-        this.flippedCards.forEach(card => card.solve());
+        this.cardTimeout = setTimeout(() => {
+          this.flippedCards.forEach(card => card.solve());
+          this.flippedCards = [];
+          this.cardTimeout = null;
+        });
         this.matches++;
       } else {
-        this.flippedCards.forEach(card => card.unflip());
+        this.cardTimeout = setTimeout(() => {
+          this.flippedCards.forEach(card => card.unflip());
+          this.flippedCards = [];
+          this.cardTimeout = null;
+        }, 2000);
       }
-      this.flippedCards = [];
 
       this.increaseTries();
 
