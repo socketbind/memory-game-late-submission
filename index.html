@@ -20,9 +20,11 @@
     <main id="board" class="game-board">
       <section class="controls row">
         <div class="col-lg-6">
-          <label for="deck-size">Deck size:</label>
-          <input type="text" id="deck-size" class="deck-size" size="8">
-          <input type="button" value="Start new game" class="btn btn-outline-primary btn-restart">
+          <form class="form-inline">
+            <label for="deck-size" class="mb-2 mr-sm-2">Deck size:</label>
+            <input type="text" id="deck-size" class="form-control mb-2 mr-sm-2 deck-size" size="8">
+            <input type="button" value="Start new game" class="btn btn-outline-primary mb-2 btn-restart">
+          </form>
         </div>
         <div class="col-lg-6 scores">
           <div class="score"><em>Best score:</em> <span>0</span></div>

@@ -34,7 +34,7 @@ export default class Board {
 
     let deckSize = parseInt(deckSizeVal);
 
-    if (deckSize < 0 || deckSize > 20) {
+    if (deckSize < 6 || deckSize > 20) {
       ensureClass(this.$deckSize, 'error');
       return;
     }
