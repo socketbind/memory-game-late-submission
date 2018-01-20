@@ -1,0 +1,34 @@
+.controls .scores {
+  text-align: right;
+}
+
+.controls .score, .controls .tries {
+  display: inline;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  border: 1px solid red;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.card.covered {
+  background-position: -200px -200px !important;
+}
+
+.card.solved {
+  visibility: hidden;
+}
+
+input.error {
+  border: 1px solid red;
+}

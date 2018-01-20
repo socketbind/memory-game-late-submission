@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Memory Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <main id="board">
+      <section class="controls row">
+        <div class="col-lg-6">
+          <label for="deck-size">Deck size:</label>
+          <input type="text" id="deck-size" class="deck-size" size="8">
+          <input type="button" value="Start game" class="btn btn-restart">
+        </div>
+        <div class="col-lg-6 scores">
+          <div class="score">Best score: <span>0</span></div>
+          <div class="tries">Tries: <span>0</span></div>
+        </div>
+      </section>
+
+      <section class="cards">
+      </section>
+    </main>
+  </div>
+
+
+  <script src="./js/index.js"></script>
+</body>
+</html>
