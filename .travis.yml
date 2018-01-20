@@ -7,13 +7,12 @@ cache:
     - "node_modules"
 script:
   - parcel build index.html
-  - ls -R
 sudo: false
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: ${TRAVIS_BUILD_DIR}/dist
+  local_dir: dist/
   on:
     branch: master
