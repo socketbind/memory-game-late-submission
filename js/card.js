@@ -17,6 +17,7 @@ export default class Card {
     const randomImage = cardImageUrl(this.id);
 
     this.$root = document.createElement('div');
+    this.$root.className = 'game-card fade-in';
 
     this.$flipper = document.createElement('div')
     this.$flipper.className = 'flipper';
@@ -30,7 +31,6 @@ export default class Card {
     this.$back.className = 'back';
     this.$flipper.appendChild(this.$back);
 
-    this.$root.className = 'game-card';
     this.$front.style.background = `url(${randomImage}) no-repeat center center`;
     this.unflip();
   }
