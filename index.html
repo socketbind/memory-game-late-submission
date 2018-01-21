@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Memory Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="47e41885cdae776b43f66fbd4bd78070.css">
+  <link rel="stylesheet" href="a15650a243c6378aa25bab7fb4689fa0.css">
+</head>
+<body>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white main-nav">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Memory Game</h5>
+  </div>
+
+  <div class="container-fluid">
+    <main id="board" class="game-board">
+      <section class="controls row">
+        <div class="col-lg-6">
+          <form class="form-inline">
+            <label for="deck-size" class="mb-2 mr-sm-2">Deck size:</label>
+            <input type="text" id="deck-size" class="form-control mb-2 mr-sm-2 deck-size" size="8" value="6">
+            <input type="button" value="Start new game" class="btn btn-outline-primary mb-2 btn-restart">
+          </form>
+        </div>
+        <div class="col-lg-6 scores">
+          <div class="score"><em>Best score:</em> <span>0</span></div>
+          <div class="tries"><em>Tries:</em> <span>0</span></div>
+        </div>
+      </section>
+
+      <section class="cards">
+      </section>
+
+      <div class="game-completed hidden">
+        <h1 class="text-success">Game completed!</h1>
+
+        <h2>Your score:</h2>
+        <span>0</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="0ac753f7842bf710eee3a1c0226c48ee.js"></script>
+</body>
+</html>
